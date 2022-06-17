@@ -36,7 +36,7 @@ public class OpenChargeSdkTest {
         //开始时间
         req.setStartTime("2022-05-01 08:00:00");
         //结束时间
-        req.setEndTime("");
+        req.setEndTime("2022-06-01 08:00:00");
 
         PagingMonthBillResp resp = openChargeSdk.pagingMonthBill(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
