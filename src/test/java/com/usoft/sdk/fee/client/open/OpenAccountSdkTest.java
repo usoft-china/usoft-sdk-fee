@@ -57,5 +57,19 @@ public class OpenAccountSdkTest {
         UpdateCustomerOrderAmountResp resp = openAccountSdk.updateCustomerOrderAmount(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
+
+    @Test
+    public void updateCustomerCategory() throws Exception {
+        UpdateCustomerCategoryReq.Builder req = UpdateCustomerCategoryReq.newBuilder();
+        //enuu
+        req.setEnuu(10050985);
+        //原系统类型（trade-app：SAAS贸易版  make-app：SAAS制造版）
+        req.setCategory("make-app");
+        //新的系统类型（trade-app：SAAS贸易版  make-app：SAAS制造版）
+        req.setNewCategory("trade-app");
+
+        UpdateCustomerCategoryResp resp = openAccountSdk.updateCustomerCategory(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
     
 }
