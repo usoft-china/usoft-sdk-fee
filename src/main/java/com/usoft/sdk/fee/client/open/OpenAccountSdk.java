@@ -66,6 +66,20 @@ public class OpenAccountSdk extends BaseSdk {
 	}
 
 	/**
+	 * 批量修改客户年销售额
+	 *
+	 * @param req
+	 * @return
+	 */
+	public UpdateCustomerOrderAmountBatchResp updateCustomerOrderAmountBatch(UpdateCustomerOrderAmountBatchReq.Builder req) throws Exception {
+		String url = baseUrl + "/open/account/customer/order/amount/update/batch";
+		String paramJson = genSignToJson(req);
+		String respJson = HttpUtil.doPost(url, paramJson, timeout);
+		UpdateCustomerOrderAmountBatchResp.Builder resp = ProtoBufUtil.toProtoBuf(UpdateCustomerOrderAmountBatchResp.newBuilder(), respJson);
+		return resp.build();
+	}
+
+	/**
 	 * 修改客户系统类型
 	 *
 	 * @param req
